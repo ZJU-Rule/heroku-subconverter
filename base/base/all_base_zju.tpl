@@ -27,9 +27,9 @@ Rule: ~
 [General]
 loglevel = notify
 bypass-system = true
-skip-proxy = 127.0.0.1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,100.64.0.0/10,localhost,*.local,e.crashlytics.com,captive.apple.com,::ffff:0:0:0:0/1,::ffff:128:0:0:0/1
+skip-proxy = 127.0.0.1,192.168.0.0/16,172.16.0.0/12,100.64.0.0/10,localhost,*.local,e.crashlytics.com,captive.apple.com,::ffff:0:0:0:0/1,::ffff:128:0:0:0/1
 #DNS设置或根据自己网络情况进行相应设置
-bypass-tun = 192.168.0.0/16,10.0.0.0/8,172.16.0.0/12
+bypass-tun = 192.168.0.0/16,172.16.0.0/12
 dns-server = 119.29.29.29,223.5.5.5
 
 [Script]
@@ -39,8 +39,8 @@ http-request https?:\/\/.*\.iqiyi\.com\/.*authcookie= script-path=https://raw.gi
 {% if request.target == "loon" %}
 
 [General]
-skip-proxy = 192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,localhost,*.local,e.crashlynatics.com
-bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,192.0.0.0/24,192.0.2.0/24,192.88.99.0/24,192.168.0.0/16,198.18.0.0/15,198.51.100.0/24,203.0.113.0/24,224.0.0.0/4,255.255.255.255/32
+skip-proxy = 192.168.0.0/16,172.16.0.0/12,localhost,*.local,e.crashlynatics.com
+bypass-tun = 100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,192.0.0.0/24,192.0.2.0/24,192.88.99.0/24,192.168.0.0/16,198.18.0.0/15,198.51.100.0/24,203.0.113.0/24,224.0.0.0/4,255.255.255.255/32
 dns-server = system,119.29.29.29,223.5.5.5
 allow-udp-proxy = false
 host = 127.0.0.1
@@ -104,7 +104,7 @@ STATE,AUTO
 {% if request.target == "quanx" %}
 
 [general]
-excluded_routes=192.168.0.0/16, 172.16.0.0/12, 100.64.0.0/10, 10.0.0.0/8
+excluded_routes=192.168.0.0/16, 172.16.0.0/12, 100.64.0.0/10
 geo_location_checker=http://ip-api.com/json/?lang=zh-CN, https://github.com/KOP-XIAO/QuantumultX/raw/master/Scripts/IP_API.js
 network_check_url=http://www.baidu.com/
 server_check_url=http://www.gstatic.com/generate_204
